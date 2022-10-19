@@ -6,7 +6,7 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:59:42 by esordone          #+#    #+#             */
-/*   Updated: 2022/10/19 12:17:35 by esordone         ###   ########.fr       */
+/*   Updated: 2022/10/19 12:43:47 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int	ft_printf(char const *format, ...)
 		}
 		if (res_aux == -1)
 		{
-			//cree un res aux per protegir el write. si n existeix el aux, com sume res a la funcio mai donaria -1, donaria altre numero i no estarua protegit
+			//cree un res aux per protegir el write. si n existeix el aux, com 
+			//sume res a la funcio mai donaria -1, donaria altre numero i no estarua protegit
 			//torne a fer va_end perque si falla el programa termina aci
 			va_end(ap);
 			return (-1);
@@ -45,5 +46,5 @@ int	ft_printf(char const *format, ...)
 		i++;	
 	}
 	va_end(ap);
-	return (res)
+	return (res);
 }
