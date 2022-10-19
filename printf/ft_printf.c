@@ -6,7 +6,7 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:59:42 by esordone          #+#    #+#             */
-/*   Updated: 2022/10/19 12:43:47 by esordone         ###   ########.fr       */
+/*   Updated: 2022/10/19 13:01:47 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ int	ft_printf(char const *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			res_aux = ft_check_format(&format[i + 1], ap);
+			i++;
+			res_aux = ft_check_format(format[i], ap);
 			//aci faig el check del format i asigne el seu valor al aux de res
 		}
 		else
