@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 14:50:38 by esordone          #+#    #+#             */
-/*   Updated: 2022/10/19 12:17:30 by esordone         ###   ########.fr       */
+/*   Created: 2022/10/19 11:32:10 by esordone          #+#    #+#             */
+/*   Updated: 2022/10/19 11:35:41 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
-# include <stdlib.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <stdarg.h>
+#include "../ft_printf.h"
 
-int		ft_printf(char const *format, ...);
-int		ft_putchar(char c);
-int		ft_putstr(char *s);
-int		ft_putnbr(int n);
-int		ft_check_format(char const *format, va_list ap);
+int	ft_putstr(char *s)
+{
+	int	i;
 
-#endif
+	i = 0;
+	if (s)
+	{
+		while (s[i] != '\0')
+		{
+			write(1, &s[i], 1);
+			i++;
+		}
+	}
+	return (1);
+}
