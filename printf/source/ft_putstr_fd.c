@@ -6,13 +6,13 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 15:03:10 by esordone          #+#    #+#             */
-/*   Updated: 2022/10/18 15:03:31 by esordone         ###   ########.fr       */
+/*   Updated: 2022/10/19 11:03:15 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
+int	ft_putstr_fd(char *s)
 {
 	int	i;
 
@@ -21,8 +21,9 @@ void	ft_putstr_fd(char *s, int fd)
 	{
 		while (s[i] != '\0')
 		{
-			write(fd, &s[i], 1);
+			write(1, &s[i], 1);
 			i++;
 		}
 	}
+	return (1);
 }

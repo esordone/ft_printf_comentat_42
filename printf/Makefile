@@ -6,7 +6,7 @@
 #    By: esordone <esordone@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 12:35:16 by esordone          #+#    #+#              #
-#    Updated: 2022/10/18 15:04:53 by esordone         ###   ########.fr        #
+#    Updated: 2022/10/19 10:50:59 by esordone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ NAME = libftprintf.a
 LIB = ar -rsc
 
 SRC = ft_printf.c \
-	  source/ ft_putstr_fd.c \
+	  source/ft_putstr_fd.c \
 	  source/ft_putnbr_fd.c \
-	  source/ft_putchar_fd.c \
+	  source/ft_putchar.c \
 
 INCLUDE = ft_printf.h
 
