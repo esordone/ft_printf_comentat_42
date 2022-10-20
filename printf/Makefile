@@ -6,7 +6,7 @@
 #    By: esordone <esordone@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/18 12:35:16 by esordone          #+#    #+#              #
-#    Updated: 2022/10/19 16:02:46 by esordone         ###   ########.fr        #
+#    Updated: 2022/10/20 10:45:11 by esordone         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ SRC = ft_printf.c \
 	  source/ft_putstr.c \
 	  source/ft_putnbr.c \
 	  source/ft_putchar.c \
-	  source/ft_putp.c \
-	  source/ft_check_format.c
+	  source/ft_check_format.c \
+	  source/ft_put_pointer.c
 
 INCLUDE = ft_printf.h
 

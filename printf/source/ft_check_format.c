@@ -6,7 +6,7 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 11:05:43 by esordone          #+#    #+#             */
-/*   Updated: 2022/10/19 16:07:56 by esordone         ###   ########.fr       */
+/*   Updated: 2022/10/20 12:24:57 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ int	ft_check_format(char format, va_list ap)
 	else if (format == 's')
 		res = ft_putstr(va_arg(ap, char*));
 	else if (format == 'p')
-		res = ft_(va_arg(ap, unsigned long long));
+	{
+		res = res + (write(1, "0x", 2));
+		if (res != 2)
+			return (-1);
+		res = res + ft_put_pointer(va_arg(ap, unsigned long long));
+	}
 	else if (format == '%')
 		res = write(1, "%", 1);
 	return (res);
