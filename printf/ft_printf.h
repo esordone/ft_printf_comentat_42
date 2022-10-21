@@ -6,7 +6,7 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 14:50:38 by esordone          #+#    #+#             */
-/*   Updated: 2022/10/20 18:00:43 by esordone         ###   ########.fr       */
+/*   Updated: 2022/10/21 12:55:59 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int		ft_putstr(char *s);
 int		ft_put_pointer(unsigned long long p);
 int		ft_putnbr(int n);
 int		ft_put_unsigned(unsigned int n);
+int		ft_hexa(unsigned int n);
 int		ft_check_format(char format, va_list ap);
 
 #endif

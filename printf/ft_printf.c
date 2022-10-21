@@ -6,7 +6,7 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 12:59:42 by esordone          #+#    #+#             */
-/*   Updated: 2022/10/20 17:56:37 by esordone         ###   ########.fr       */
+/*   Updated: 2022/10/21 10:58:45 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,7 @@ int	ft_printf(char const *format, ...)
 			//aci faig el check del format i asigne el seu valor al aux de res
 		}
 		else
-		{
 			res_aux = ft_putchar(format[i]);
-		}
 		if (res_aux == -1)
 		{
 			//cree un res aux per protegir el write. si n existeix el aux, com 

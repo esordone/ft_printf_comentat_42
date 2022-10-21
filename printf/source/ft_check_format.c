@@ -6,7 +6,7 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 11:05:43 by esordone          #+#    #+#             */
-/*   Updated: 2022/10/20 18:21:06 by esordone         ###   ########.fr       */
+/*   Updated: 2022/10/21 13:06:15 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int	ft_check_format(char format, va_list ap)
 		res = ft_putnbr(va_arg(ap, int));
 	else if (format == 'u')
 		res = ft_put_unsigned(va_arg(ap, unsigned int));
+	else if (format == 'x')
+		res = ft_hexa(va_arg(ap, unsigned int));
 	else if (format == '%')
 		res = write(1, "%", 1);
 	return (res);
