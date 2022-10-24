@@ -6,7 +6,7 @@
 /*   By: esordone <esordone@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/21 10:53:58 by esordone          #+#    #+#             */
-/*   Updated: 2022/10/21 13:06:12 by esordone         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:08:53 by esordone         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,44 +24,70 @@ int	ft_count_hexa(unsigned int n)
 		n = n / 16;
 		len++;
 	}
-	printf("El len de n es |%d|\n", len);
+	//printf("El len de n es |%d|\n", len);
 	return (len);
 }
 
-int	ft_hexa(unsigned int n)
+int	ft_hexa(unsigned int n, char format)
 {
 	int	res;
+	int	len;
 
+	len = 0;
 	res = 0;
 	if (n == 0)
-		res = res + (write(1, "0", 1));
+	{
+		res = (write(1, "0", 1));
+		if (res != 1)
+			return (-1);
+	}
 	else
 	{
-		if (n > 16)
+		if (n >= 16)
 		{
-			res = res + (ft_hexa(n / 16));
-			res = res + (ft_hexa(n % 16));
-			printf("Ara res val |%d|\n", res);
+			res = res + (ft_hexa((n / 16), format));
+			res = res + (ft_hexa((n % 16), format));
+			//printf("Ara res val |%d|\n", res);
 		}
 		else 
 		{
 			if (n <= 9)
 			{
-			res = res + (ft_putchar(n + '0'));
-			printf("N es mes menut o igual que 9, ara res val |%d|\n", res);
+				res = res + (ft_putchar(n + '0'));
+				/*if (res == -1)
+					return (-1);
+				len = len + res;*/
+			//printf("N es mes menut o igual que 9, ara res val |%d|\n", res);
 			}
 			else
 			{
-			res = res + (ft_putchar(n - 10) + 'a');
-			printf("N es 10 o mes gran, ara res val |%d|\n", res);
+				if (format == 'x')
+				{
+					res = (ft_putchar((n - 10) + 'a'));
+					if (res == -1)
+						return (-1);
+					len = len + res;
+				}
+				if (format == 'X')
+				{
+					res = (ft_putchar((n - 10) + 'A'));
+					if (res == -1)
+						return (-1);
+					len = len + res;
+				}
+			//printf("N es 10 o mes gran, ara res val |%d|\n", res);
 			}
 		}
+		/*if (res == -1)
+			return (-1);
 	}
-	return (res);	
+	len = len + res;*/
+	}
+	return (len);
 }
-
+/*
 int	main(void)
 {
-	printf("el resultat final es |%d|\n", ft_hexa(20));
+	printf("el resultat final es |%d|\n", ft_hexa(234, 'X'));
 	return (0);
-}
+}*/
